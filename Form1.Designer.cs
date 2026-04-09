@@ -48,6 +48,9 @@
             btnOrder = new Button();
             btninit = new Button();
             label1 = new Label();
+            label12 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -268,15 +271,45 @@
             label1.AutoSize = true;
             label1.Location = new Point(559, 358);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(0, 20);
             label1.TabIndex = 17;
-            label1.Text = "label1";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.ForeColor = Color.Red;
+            label12.Location = new Point(559, 330);
+            label12.Name = "label12";
+            label12.Size = new Size(0, 20);
+            label12.TabIndex = 18;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(559, 361);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 20);
+            label2.TabIndex = 19;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("맑은 고딕", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            label3.ForeColor = Color.Red;
+            label3.Location = new Point(559, 358);
+            label3.Name = "label3";
+            label3.Size = new Size(162, 25);
+            label3.TabIndex = 20;
+            label3.Text = "메뉴를 선택하세요";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label12);
             Controls.Add(label1);
             Controls.Add(btninit);
             Controls.Add(btnOrder);
@@ -285,7 +318,6 @@
             Controls.Add(groupBox1);
             Controls.Add(lblAppName);
             Name = "Form1";
-            Text = "Burger Kiosk v1.0";
             Load += Form1_Load;
             Shown += Form1_Shown;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -322,5 +354,8 @@
         private Button btnOrder;
         private Button btninit;
         private Label label1;
+        private Label label12;
+        private Label label2;
+        private Label label3;
     }
 }
