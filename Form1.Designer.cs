@@ -226,6 +226,7 @@
             lblTotalCost.Size = new Size(130, 28);
             lblTotalCost.TabIndex = 15;
             lblTotalCost.Text = "총 금액 : 0원";
+            lblTotalCost.Click += lblTotalCost_Click;
             // 
             // lstOrder
             // 
