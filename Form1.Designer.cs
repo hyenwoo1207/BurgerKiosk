@@ -47,6 +47,7 @@
             lstOrder = new ListBox();
             btnOrder = new Button();
             btninit = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -73,10 +74,11 @@
             rdoHamBurger.Location = new Point(6, 40);
             rdoHamBurger.Name = "rdoHamBurger";
             rdoHamBurger.Size = new Size(104, 35);
-            rdoHamBurger.TabIndex = 1;
+            rdoHamBurger.TabIndex = 0;
             rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
+            rdoHamBurger.CheckedChanged += rdoHamBurger_CheckedChanged;
             // 
             // rdoBulgogiBurger
             // 
@@ -85,10 +87,11 @@
             rdoBulgogiBurger.Location = new Point(6, 164);
             rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             rdoBulgogiBurger.Size = new Size(150, 35);
-            rdoBulgogiBurger.TabIndex = 2;
+            rdoBulgogiBurger.TabIndex = 1;
             rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
+            rdoBulgogiBurger.CheckedChanged += rdoBulgogiBurger_CheckedChanged;
             // 
             // rdoChickenBurger
             // 
@@ -97,7 +100,7 @@
             rdoChickenBurger.Location = new Point(2, 272);
             rdoChickenBurger.Name = "rdoChickenBurger";
             rdoChickenBurger.Size = new Size(127, 35);
-            rdoChickenBurger.TabIndex = 3;
+            rdoChickenBurger.TabIndex = 2;
             rdoChickenBurger.TabStop = true;
             rdoChickenBurger.Text = "치킨버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
@@ -138,7 +141,7 @@
             chkPotato.Location = new Point(6, 48);
             chkPotato.Name = "chkPotato";
             chkPotato.Size = new Size(114, 32);
-            chkPotato.TabIndex = 8;
+            chkPotato.TabIndex = 0;
             chkPotato.Text = "감자튀김";
             chkPotato.UseVisualStyleBackColor = true;
             chkPotato.CheckedChanged += checkBox1_CheckedChanged;
@@ -149,7 +152,7 @@
             chkCola.Location = new Point(6, 104);
             chkCola.Name = "chkCola";
             chkCola.Size = new Size(74, 32);
-            chkCola.TabIndex = 9;
+            chkCola.TabIndex = 1;
             chkCola.Text = "콜라";
             chkCola.UseVisualStyleBackColor = true;
             // 
@@ -159,7 +162,7 @@
             chkCheese.Location = new Point(6, 168);
             chkCheese.Name = "chkCheese";
             chkCheese.Size = new Size(121, 32);
-            chkCheese.TabIndex = 10;
+            chkCheese.TabIndex = 2;
             chkCheese.Text = "치즈 추가";
             chkCheese.UseVisualStyleBackColor = true;
             // 
@@ -169,7 +172,7 @@
             chkSauce.Location = new Point(6, 222);
             chkSauce.Name = "chkSauce";
             chkSauce.Size = new Size(121, 32);
-            chkSauce.TabIndex = 11;
+            chkSauce.TabIndex = 3;
             chkSauce.Text = "소스 추가";
             chkSauce.UseVisualStyleBackColor = true;
             // 
@@ -185,7 +188,7 @@
             groupBox1.Location = new Point(12, 74);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(329, 364);
-            groupBox1.TabIndex = 12;
+            groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "메뉴 선택";
             // 
@@ -199,7 +202,7 @@
             groupBox2.Location = new Point(359, 88);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(147, 350);
-            groupBox2.TabIndex = 13;
+            groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "추가 옵션";
             groupBox2.Enter += groupBox2_Enter;
@@ -240,7 +243,7 @@
             // 
             btnOrder.BackColor = Color.Lime;
             btnOrder.Font = new Font("맑은 고딕", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            btnOrder.Location = new Point(543, 359);
+            btnOrder.Location = new Point(541, 393);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(104, 45);
             btnOrder.TabIndex = 15;
@@ -252,7 +255,7 @@
             // 
             btninit.BackColor = Color.Red;
             btninit.Font = new Font("맑은 고딕", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            btninit.Location = new Point(684, 359);
+            btninit.Location = new Point(684, 393);
             btninit.Name = "btninit";
             btninit.Size = new Size(104, 45);
             btninit.TabIndex = 16;
@@ -260,11 +263,21 @@
             btninit.UseVisualStyleBackColor = false;
             btninit.Click += btninit_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(559, 358);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 17;
+            label1.Text = "label1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(btninit);
             Controls.Add(btnOrder);
             Controls.Add(grpOrder);
@@ -274,6 +287,7 @@
             Name = "Form1";
             Text = "Burger Kiosk v1.0";
             Load += Form1_Load;
+            Shown += Form1_Shown;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -307,5 +321,6 @@
         private Label lblTotalCost;
         private Button btnOrder;
         private Button btninit;
+        private Label label1;
     }
 }
